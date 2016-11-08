@@ -220,7 +220,7 @@ Let's take a look at that in the browser now. Put a `debugger` in your `render` 
 
 If you run the following in your console, you should see something like this:
 
-!()[]
+![](https://s3-us-west-2.amazonaws.com/curriculum-content/web-development/react/Screen+Shot+2016-11-08+at+11.19.35+AM.png)
 
 We can see that `this.props.actions` returns an object. If we open up that object we can see that its key/value pairs consist of the action creator function names, pointing to values of each action creator function. 
 
@@ -444,6 +444,8 @@ Before we go, let's sum up the overall flow of this feature one more time:
 5. The `App` component, because it is connected to the store via the `connect` function, will be told to re-render.
 6. The `App` component will first re-invoke `mapStateToProps`, which will create a new `props` object to be passed to the component, this time with the updated information from state. 
 7. The `App` component and its children will re-render with the new data from `props`. 
+
+![](https://s3-us-west-2.amazonaws.com/curriculum-content/web-development/react/map-dispatch-to-props.png)
 
 
 
