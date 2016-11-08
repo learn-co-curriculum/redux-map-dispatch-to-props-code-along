@@ -13,9 +13,11 @@ class App extends Component {
     this.createItem = this.createItem.bind(this)
   }
 
-  createItem(itemDescription) {
+  createItem(event) {
     debugger;
-    this.props.actions.addShoppingListItem(itemDescription)
+    event.preventDefault();
+    const newItemDescription = event.target.children[1].value
+    this.props.actions.addShoppingListItem(newItemDescription)
   }
 
   render() {
@@ -28,7 +30,11 @@ class App extends Component {
           <ShoppingList items={this.props.shoppingListItems}/>
         </div>
         <div className="col-lg-12">
-          <NewItemForm addItem={this.createItem} />
+           <form className="col-lg-6 col-lg-offset-3 form-horizontal" onSubmit={this.createItem}>
+            <label>new item:</label>
+            <input className="form-control"/>
+            <input type="submit" />
+          </form>
         </div>
       </div>
     );
