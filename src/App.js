@@ -14,7 +14,6 @@ class App extends Component {
   }
 
   createItem(itemDescription) {
-    debugger;
     this.props.actions.addShoppingListItem(itemDescription)
   }
 
@@ -28,7 +27,7 @@ class App extends Component {
           <ShoppingList items={this.props.shoppingListItems}/>
         </div>
         <div className="col-lg-12">
-          <NewItemForm addItem={this.createItem} />
+          <NewItemForm triggerCreateItem={this.createItem} />
         </div>
       </div>
     );
