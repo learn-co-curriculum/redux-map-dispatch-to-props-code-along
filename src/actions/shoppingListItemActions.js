@@ -4,5 +4,6 @@ export function getShoppingListItems() {
 }
 
 export function addShoppingListItem(newItemDescription) {
-  return {type: 'ADD_SHOPPING_LIST_ITEM', payload: newItemDescription}
+  const newItem = {description: newItemDescription}
+  return {type: 'ADD_SHOPPING_LIST_ITEM', payload: newItem}
 }
